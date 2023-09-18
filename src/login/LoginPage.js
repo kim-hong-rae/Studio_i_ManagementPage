@@ -1,5 +1,4 @@
 
-import podcast from './podcast.png';
 import completed from './completed.png';
 
 function LoginPage() {
