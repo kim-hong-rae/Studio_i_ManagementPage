@@ -5,7 +5,7 @@ function LoginPage() {
   return (
     <div className="login-container">
       <div className="title-left">
-        <div className="padding-8px" id="title-sm">로그인</div>
+        <div className="padding-8px" id="title-lg">Sign In</div>
         <div className="login-box">
           <div className="login-form">
             <div className="align-left" id="text-md">아이디</div>
