@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const RightDashboardBox = styled.div`
     border-radius: 0 40px 40px 0;
-    border-left: 2px solid black;
+    border-left: 1px dotted black;
     background-color: white;
     flex-basis: 50%;
-    
 
 `;
 
@@ -30,17 +29,31 @@ const BoardTitleDiv = styled.div`
 `;
 
 const BoardContentDiv = styled.div`
+    text-align: center;
+    height: 70%;
+    width: 100%;
+`;
+
+const ContentDiv = styled.div`
     display: flex;
     text-align: center;
-     height: 70%;
+    width: 100%;
+    height: 33%;
+    background-color: white;
 `;
 
-const SubTitle = styled.div`
+const SubTitle = styled.text`
     font-weight: 600;
     font-size: 1.5rem;
-
 `;
 
+const Text = styled.text`
+    font-size: 1rem;
+    text-decoration: underline;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+`;
 
 const GoButton = styled.div`
     cursor: pointer;
@@ -77,7 +90,21 @@ const RightDashboard = () => {
                     </GoButton>
                 </BoardTitleDiv>
                 <BoardContentDiv>
-
+                    <ContentDiv>
+                        <Text>
+                            aadfa
+                        </Text>
+                    </ContentDiv>
+                    <ContentDiv>
+                        <Text>
+                            aadfa
+                        </Text>
+                    </ContentDiv>
+                    <ContentDiv>
+                        <Text>
+                            aadfa
+                        </Text>
+                    </ContentDiv>
                 </BoardContentDiv>
             </RightboardBody>
             <RightboardBody>

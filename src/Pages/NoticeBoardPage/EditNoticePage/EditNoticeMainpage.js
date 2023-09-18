@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../../Components/common/header";
 import styled from "styled-components";
 import {useNavigate} from "react-router-dom";
+import Body from "../../../Components/common/Body";
 
 const MainBody = styled.div`
     /* max-width : 1184px; */
@@ -121,70 +122,79 @@ const TableCellCenter = styled.td`
 `;
 /////////////////////////////////////
 const WriteButton = styled.button`
-    width: 6rem;
+   width: 6rem;
     height: 2rem;
-    margin: 2%;
+    margin: 1%;
+    font-size: 1rem;
 `;
 const EditNoticeMainpage = () => {
-    const navigate = useNavigate();
 
-    const tableData = [
-        { id: 122, category: '질문', title: 'ㅁㅇㄻadfafasdㄹㅇㅁㄴㄻㄴㄹㅇㄴ',  date: 30,  username: '김김김' },
-        { id: 2, category: '강의', title: 30,  date: 30,  username: '이이이' },
-        { id: 3, category: '기타', title: 30,  date: 30,  username: '박박박' },
-    ];
-    const goToPreviousPage = () => {
-        navigate("/");
-    };
+    const EditNoticeMainpageContent=()=>{
+        const navigate = useNavigate();
 
-    return (
-        <>
-            <Header />
-            <MainBody>
-                <DashboardDiv>
-                    <BoardTitleDiv>
-                        <Title onClick={goToPreviousPage}>
-                            Dashboard
-                        </Title>
-                        <SubTitle onClick={goToPreviousPage}>
-                            >Socoa
-                        </SubTitle>
-                        <SubTitle>
-                            >편집
-                        </SubTitle>
-                    </BoardTitleDiv>
-                    <DashboardBox>
-                        <TableContainer>
-                            <Table>
-                                <thead>
-                                <tr>
-                                    <TableHeader1>번호</TableHeader1>
-                                    <TableHeader2>카테고리</TableHeader2>
-                                    <TableHeader3>제목</TableHeader3>
-                                    <TableHeader4>작성일자</TableHeader4>
-                                    <TableHeader5>닉네임</TableHeader5>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {tableData.map((row) => (
-                                    <tr key={row.id}>
-                                        <TableCellCenter>{row.id}</TableCellCenter>
-                                        <TableCellCenter>{row.category}</TableCellCenter>
-                                        <TableCell>{row.title}</TableCell>
-                                        <TableCellCenter>{row.date}</TableCellCenter>
-                                        <TableCellCenter>{row.username}</TableCellCenter>
+        const tableData = [
+            { id: 122, category: '질문', title: 'ㅁㅇㄻadfafasdㄹㅇㅁㄴㄻㄴㄹㅇㄴ',  date: 30,  username: '김김김' },
+            { id: 2, category: '강의', title: 30,  date: 30,  username: '이이이' },
+            { id: 3, category: '기타', title: 30,  date: 30,  username: '박박박' },
+        ];
+        const goToPreviousPage = () => {
+            navigate("/");
+        };
+
+        return (
+            <>
+                <MainBody>
+                    <DashboardDiv>
+                        <BoardTitleDiv>
+                            <Title onClick={goToPreviousPage}>
+                                Dashboard
+                            </Title>
+                            <SubTitle onClick={goToPreviousPage}>
+                                >Socoa
+                            </SubTitle>
+                            <SubTitle>
+                                >편집
+                            </SubTitle>
+                        </BoardTitleDiv>
+                        <DashboardBox>
+                            <TableContainer>
+                                <Table>
+                                    <thead>
+                                    <tr>
+                                        <TableHeader1>번호</TableHeader1>
+                                        <TableHeader2>카테고리</TableHeader2>
+                                        <TableHeader3>제목</TableHeader3>
+                                        <TableHeader4>작성일자</TableHeader4>
+                                        <TableHeader5>닉네임</TableHeader5>
                                     </tr>
-                                ))}
-                                </tbody>
-                            </Table>
-                        </TableContainer>
-                        <WriteButton>
-                            글쓰기
-                        </WriteButton>
-                    </DashboardBox>
-                </DashboardDiv>
-            </MainBody>
-        </>
+                                    </thead>
+                                    <tbody>
+                                    {tableData.map((row) => (
+                                        <tr key={row.id}>
+                                            <TableCellCenter>{row.id}</TableCellCenter>
+                                            <TableCellCenter>{row.category}</TableCellCenter>
+                                            <TableCell>{row.title}</TableCell>
+                                            <TableCellCenter>{row.date}</TableCellCenter>
+                                            <TableCellCenter>{row.username}</TableCellCenter>
+                                        </tr>
+                                    ))}
+                                    </tbody>
+                                </Table>
+                            </TableContainer>
+                            <WriteButton>
+                                글쓰기
+                            </WriteButton>
+                        </DashboardBox>
+                    </DashboardDiv>
+                </MainBody>
+            </>
+        )
+    }
+
+    return(
+        <Body>
+            <EditNoticeMainpageContent/>
+        </Body>
     )
 }
 export default EditNoticeMainpage;

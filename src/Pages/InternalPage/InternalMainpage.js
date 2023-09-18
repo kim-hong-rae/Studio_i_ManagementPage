@@ -4,6 +4,7 @@ import Dashboard from "./Dashboard";
 import RecentArticle from "./RecentArticle";
 import RecentProject from "./RecentProject";
 import styled from "styled-components";
+import Body from "../../Components/common/Body";
 
 const MainBody = styled.div`
     /* max-width : 1184px; */
@@ -13,7 +14,6 @@ const MainBody = styled.div`
     justify-content: center;
     flex-direction: column;
     background-color: gray; 
-
 
 `;
 
@@ -28,17 +28,26 @@ const Wrapper = styled.div`
 `;
 
 const InternalMainpage = () => {
-    return (
-        <>
-        <Header />
-        <MainBody>
-            <Dashboard></Dashboard>
-            <Wrapper>
-                <RecentArticle/>
-                <RecentProject/>
-            </Wrapper>
-        </MainBody>
-        </>
+
+    const InternalMainpageContent=()=>{
+        return (
+            <>
+                <MainBody>
+                    <Dashboard></Dashboard>
+                    <Wrapper>
+                        <RecentArticle/>
+                        <RecentProject/>
+                    </Wrapper>
+                </MainBody>
+            </>
+        )
+    }
+
+
+    return(
+        <Body>
+            <InternalMainpageContent/>
+        </Body>
     )
 }
 export default InternalMainpage;
