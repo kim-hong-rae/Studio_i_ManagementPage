@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import styled from "styled-components";
+import RightDashboard from "./Dashboard/RightDashboard";
 
 const DashboardBox = styled.div`
     display: flex;
@@ -57,7 +58,8 @@ const Line = styled.div`
 const Right = styled.div`
     padding: 20px;
     border-radius: 0 40px 40px 0;
-    background-color: wheat;
+    border-left: 2px solid black;
+    background-color: white;
     flex-basis: 50%;
 
 
@@ -106,7 +108,7 @@ const Dashboard = () => {
                 <Panel>
                     <Left />
                     <Line />
-                    <Right />
+                    <RightDashboard />
                 </Panel>
                 {expanded && <NewPanel/>}
             </DashboardBody>
