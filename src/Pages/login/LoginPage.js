@@ -1,4 +1,3 @@
-import styles from './LoginPage.css';
 import completed from './completed.png';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
