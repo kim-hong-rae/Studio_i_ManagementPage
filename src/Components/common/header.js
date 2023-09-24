@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Responsive from './responsive';
 import Button from './Button';
 import SearchBar from '../SearchBar';
+import { Link } from 'react-router-dom';
 
 const HeaderBlock = styled.div`
   position: fixed;
@@ -45,7 +46,9 @@ const Header = () => {
           <div className="logo">STUDIO I</div>
           <SearchBar />
           <div className="right">
-            <Button>로그인</Button>
+            <Button>
+                <Link to="/LoginPage">로그인</Link>
+            </Button>
           </div>
         </Wrapper>
       </HeaderBlock>

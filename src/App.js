@@ -5,7 +5,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import EditNoticeMainpage from "./Pages/NoticeBoardPage/EditNoticePage/EditNoticeMainpage";
 import MakingNoticeMainpage from "./Pages/NoticeBoardPage/MakingNoticePage/MakingNoticeMainpage";
 import PlanNoticeMainpage from "./Pages/NoticeBoardPage/PlanNoticePage/PlanNoticeMainpage";
-import LoginPage from "/Pages/login/LoginPage";
+import LoginPage from "./Pages/login/LoginPage";
+import SignInPage from "./Pages/login/SignInPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/MakingMain" element={<MakingNoticeMainpage />}/>
         <Route path="/PlanMain" element={<PlanNoticeMainpage />}/>
         <Route path="/LoginPage" element={<LoginPage />}/>
+        <Route path="/SignInPage" element={<SignInPage />}/>
       </Routes>
     </BrowserRouter>
   );
