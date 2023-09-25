@@ -192,9 +192,8 @@ const StyledLink = styled(Link)`
 function LoginPage() {
   return (
     <LoginContainer>
-        <div className="title-left">
-        {/*아무 기능 없는 Div*/}
-          <Margin8px><TitleLg>Sign In</TitleLg></Margin8px>
+        <TitleLeft>
+          <Margin8px><TitleLg>Login </TitleLg></Margin8px>
         <LoginBox>
           <LoginForm>
             <AlignLeft><TextMd>아이디</TextMd></AlignLeft>
@@ -210,7 +209,7 @@ function LoginPage() {
             <LoginImage src={completed}/>
           </LoginImageBox>
       </LoginBox>
-      </div>
+      </TitleLeft>
     </LoginContainer>
   );
 }
