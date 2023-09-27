@@ -36,7 +36,7 @@ const Wrapper = styled(Responsive)`
  */
 const PageBody = styled.div`
   display: flex;
-  background-color: grey;
+  background-color: #E9E9E9;
 `;
 
 const SideDiv = styled.div`

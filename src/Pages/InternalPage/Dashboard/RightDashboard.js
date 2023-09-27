@@ -40,6 +40,9 @@ const ContentDiv = styled.div`
     width: 100%;
     height: 33%;
     background-color: white;
+    min-width: 8rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `;
 
 const SubTitle = styled.text`
@@ -53,6 +56,7 @@ const Text = styled.text`
     white-space: nowrap;
     text-overflow: ellipsis;
     cursor: pointer;
+    width:
 `;
 
 const GoButton = styled.div`
@@ -92,7 +96,7 @@ const RightDashboard = () => {
                 <BoardContentDiv>
                     <ContentDiv>
                         <Text>
-                            aadfa
+                            aadfaadfafasdfasdfasdfasd
                         </Text>
                     </ContentDiv>
                     <ContentDiv>

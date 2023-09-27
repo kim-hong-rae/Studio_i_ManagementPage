@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Responsive from './responsive';
 import Button from './Button';
 import SearchBar from '../SearchBar';
+import { CgMenuGridO } from "react-icons/cg";
 
 const HeaderBlock = styled.div`
   position: fixed;
@@ -16,17 +17,35 @@ const HeaderBlock = styled.div`
  */
 const Wrapper = styled(Responsive)`
   height: 4rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 자식 엘리먼트 사이의 여백을 최대로 설정 */
+  
   .logo {
-    font-size: 1.125rem;
-    font-weight: 800;
+    font-size: 2.25rem;
+    font-weight: 600;
     letter-spacing: 2px;
+    white-space: nowrap;
+    
+    @media(max-width: 390px){
+    font-size: 1.625rem;
+    }
   }
+  .menu{
+    width: 10%;
+    padding-left: 1rem;
+
+  }
+  .search{
+    width: 30%;
+  }
+  
   .right {
     display: flex;
     align-items: center;
+    margin-left: 20%;
+    width: 20%;
+    justify-content: center;
   }
 `;
 
@@ -38,20 +57,25 @@ const Spacer = styled.div`
 `;
 
 const Header = () => {
-  return (
-    <>
-      <HeaderBlock>
-        <Wrapper>
-          <div className="logo">STUDIO I</div>
-          <SearchBar />
-          <div className="right">
-            <Button>로그인</Button>
-          </div>
-        </Wrapper>
-      </HeaderBlock>
-      <Spacer />
-    </>
-  );
+    return (
+        <>
+            <HeaderBlock>
+                <Wrapper>
+                    <div className="logo">STUDIO I</div>
+                    <div className="menu">
+                    <CgMenuGridO className="MenuIcon" size="2rem" />
+                    </div>
+                    <div className="search">
+                    <SearchBar />
+                    </div>
+                    <div className="right">
+                        <Button>로그인</Button>
+                    </div>
+                </Wrapper>
+            </HeaderBlock>
+            <Spacer />
+        </>
+    );
 };
 
 export default Header;
