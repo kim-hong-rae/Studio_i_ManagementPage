@@ -38,6 +38,14 @@ const Spacer = styled.div`
   height: 4rem;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 부모 요소의 색상 상속 */
+  cursor: pointer; /* 포인터 커서 표시 */
+  width: 100%;
+  display: inline-block; /* 또는 block로 설정 */
+`;
+
 const Header = () => {
   return (
     <>
@@ -47,7 +55,7 @@ const Header = () => {
           <SearchBar />
           <div className="right">
             <Button>
-                <Link to="/LoginPage">로그인</Link>
+                <StyledLink to="/LoginPage">로그인</StyledLink>
             </Button>
           </div>
         </Wrapper>

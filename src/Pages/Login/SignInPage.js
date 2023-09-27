@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import axios from 'axios';
+import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 const media = {
     mobile: 'only screen and (max-width: 390px)'
@@ -121,8 +124,50 @@ const TextMd = styled.div`
   }
 `;
 
+const healthCheckTest =()=> {
+    // Axios를 사용하여 Spring Boot API에 GET 요청을 보냅니다.
+    axios.get('http://localhost:8081/user/health_check')
+        .then(response => {
+            console.log({message: response.data})
+        })
+        .catch(error => {
+            console.error('API 요청 중 오류 발생:', error);
+        });
+}
 
 function SignInPage(){
+   // const navigate = useNavigate();
+
+    const [formData, setFormData] = useState({
+        email: "",
+        pwd: "",
+        name: "",
+        phoneNumber: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = () => {
+        // Send a POST request to your endpoint with formData.
+        axios.post('http://localhost:8081/user/join', formData)
+            .then((response) => {
+                console.log({ message: response.data });
+                alert("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.")
+
+                //이전 페이지로 이동
+                //navigate(-1);
+            })
+            .catch((error) => {
+                console.error('API 요청 중 오류 발생:', error);
+            });
+    };
+
     return(
         <SignInContainer>
             <TitleLeft>
@@ -133,19 +178,35 @@ function SignInPage(){
                 <SignInForm className="SignInForm">
                     <SubInputForm className="SubInputForm">
                         <TextMd>메일주소</TextMd>
-                        <InputSizeWithBtn />
+                        <InputSizeWithBtn   name="email"
+                                            value={formData.email}
+                                            onChange={handleChange} />
                         <BtnWithInput>인증</BtnWithInput>
                     </SubInputForm>
                     <SubInputForm className="SubInputFormWithButton">
                         <TextMd>비밀번호</TextMd>
-                        <InputSize />
+                        <InputSize   name="pwd"
+                                     value={formData.pwd}
+                                     onChange={handleChange} />
                     </SubInputForm>
                     <SubInputForm className="SubInputForm">
                         <TextMd>비밀번호 확인</TextMd>
                         <InputSize />
                     </SubInputForm>
+                    <SubInputForm className="SubInputForm">
+                        <TextMd>이름</TextMd>
+                        <InputSize   name="name"
+                                     value={formData.name}
+                                     onChange={handleChange}/>
+                    </SubInputForm>
+                    <SubInputForm className="SubInputForm">
+                        <TextMd>전화번호</TextMd>
+                        <InputSize   name="phoneNumber"
+                                     value={formData.phoneNumber}
+                                     onChange={handleChange} />
+                    </SubInputForm>
                 <HorizontalLine></HorizontalLine>
-                <SignInPageButton>회원가입</SignInPageButton>
+                <SignInPageButton onClick={() => handleSubmit()}>회원가입</SignInPageButton>
                 </SignInForm>
             </SignInBox>
             </TitleLeft>
