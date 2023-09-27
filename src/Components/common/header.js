@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Responsive from './responsive';
 import Button from './Button';
 import SearchBar from '../SearchBar';
+import { Link } from 'react-router-dom';
 import { CgMenuGridO } from "react-icons/cg";
 
 const HeaderBlock = styled.div`
@@ -69,13 +70,16 @@ const Header = () => {
                     <SearchBar />
                     </div>
                     <div className="right">
-                        <Button>로그인</Button>
+                        <Button>
+                            <Link to="/LoginPage">로그인</Link>
+                        </Button>
                     </div>
                 </Wrapper>
             </HeaderBlock>
             <Spacer />
         </>
     );
+
 };
 
 export default Header;
