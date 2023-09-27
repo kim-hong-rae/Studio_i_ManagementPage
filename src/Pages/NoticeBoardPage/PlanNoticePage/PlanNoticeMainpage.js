@@ -11,7 +11,6 @@ const MainBody = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: gray;
     height: 100vh;
 `;
 
@@ -21,6 +20,7 @@ const DashboardDiv = styled.div`
     min-width: 80%;
     height: 82vh;
     background-color: white;
+    padding-bottom: 0.3rem;
 `;
 
 const BoardTitleDiv = styled.div`
@@ -28,7 +28,7 @@ const BoardTitleDiv = styled.div`
     text-align: center;
     min-height: 2rem;
     height: 4vh;
-    background-color: gray;
+    background-color: #E9E9E9;
 `;
 
 const DashboardBox = styled.div`

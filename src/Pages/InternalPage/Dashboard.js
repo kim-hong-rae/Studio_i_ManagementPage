@@ -13,6 +13,7 @@ const DashboardBox = styled.div`
 const Title = styled.div`
     font-weight: bold;
     font-size: 23px;
+    padding-bottom: 0.3rem;
 `;
 
 const DashboardBody = styled.div`

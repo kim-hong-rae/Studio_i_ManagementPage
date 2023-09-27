@@ -13,7 +13,7 @@ const MainBody = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: gray; 
+ 
 
 `;
 
